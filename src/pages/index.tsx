@@ -12,16 +12,6 @@ interface HomeProps {
   }
 }
 
-/*
-  3 Formas principais de fazer uma chamada a api
-
-  - Client-side -> Quando não precisa de indexação, informação que é carregada de uma ação do usuário, não
-                    necessáriamente quando a página carrega, DEPOIS DA PÁGINA SER CARREGADA.
-
-  - Server-side -> Dados dinâmicos(tempo real) do usuário que está acessando (no contexto da requisição)
-  - Static Site Generation -> Bom para CO, página para todo mundo ver
-*/
-
 export default function Home({ product }: HomeProps) {
   
   return (
