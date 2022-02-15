@@ -8,8 +8,6 @@ export function SignInButton() {
   // Retorna se o usuário está logado ou não
   const { data: session } = useSession();
 
-  console.log(session);
-
   return session ? (
     <button
       type="button"
