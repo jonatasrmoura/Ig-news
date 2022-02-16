@@ -19,17 +19,27 @@ Back-end(Servidor) retorna a lista de produtos em JSON -> Código React(bundle.j
 
 
 <h3>3 Formas principais de fazer uma chamada a api</h3>
-<p>- <strong>Client-side </strong>Quando não precisa de indexação, informação que é carregada de uma ação do usuário, não
+<p>- <strong>Client-side </strong>Quando não precisa de indexação, informação que é carregada de uma ação do usuário. Não
   necessáriamente quando a página carrega, DEPOIS DA PÁGINA SER CARREGADA.</p>
 <p>- <strong>Server-side </strong>Dados dinâmicos(tempo real) do usuário que está acessando (no contexto da requisição)</p>
 <p>- <strong>Static Site Generation </strong>Bom para CO, página para todo mundo ver</p>
 
 <hr>
 
-<h2>Autenticação com Next.js</h2>
-
+<h2>Autenticação com Next.js usando o Next Auth Js</h2>
 
 <h4>Métodos disponíveis dentro do Next.js para se autenticar</h4>
 <p>JWT (Storage)</p>
 <p>Next Auth (Social)</p>
 <p>Cognito, Auth0</p>
+
+<h2>Conceitos de web hooks</h2>
+<p>Quando uma aplicação de terceiro avisa a nossa aplicação que algum evento aconteceu.</p>
+<p>
+  Geralmente ela nos avisa por uma rota http. Quando acontecer um evento nessa aplicação de terceiro,
+  eu peço para ele me informar por uma rota da minha aplicação(http) e vai me mandar as informações de
+  evento em especifico.
+  ex de uma compra: <strong>Aconteceu um evento de cartão sem fundos o cartão foi negado, para 
+  o cliente Fulano, na compra X.</strong>
+  Básicamente essa é o conceito de web hooks
+</p>
