@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Readable } from "stream";
 import Stripe from "stripe";
-import { stripe } from "../../services/stripe";
+
 import { saveSubscription } from "./_lib/manageSubscription";
+import { stripe } from "../../services/stripe";
 
 async function buffer(readable: Readable) {
   const chunks = [];
@@ -24,8 +25,11 @@ export const config = {
 };
 
 //Quais eventos são relevantes(quais eu quero ouvir, e quais eventos eu quero que minha aplicação não ouça)
+// Eventos que o usuário vai fazer e que nós iremos ouvir
 const relevantEvents = new Set([
-  'checkout.session.completed'
+  'checkout.session.completed',
+  'customer.subscription.updated',
+  'customer.subscription.deleted',
 ]);
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -49,13 +53,24 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (relevantEvents.has(type)) {
       try {
         switch (type) {
-          case 'checkout.session.completed':
+          case 'customer.subscription.updated':
+          case 'customer.subscription.deleted':
+          const subscription = event.data.object as Stripe.Subscription;
 
-          const checkoutSession = event.data.object as Stripe.Checkout.Session; 
+          await saveSubscription(
+            subscription.id,
+            subscription.customer.toString(),
+            false
+          )
+
+            break;
+          case 'checkout.session.completed':
+          const checkoutSession = event.data.object as Stripe.Checkout.Session;
 
             await saveSubscription(
               checkoutSession.subscription.toString(),
-              checkoutSession.customer.toString()
+              checkoutSession.customer.toString(),
+              true
             );
 
             break;

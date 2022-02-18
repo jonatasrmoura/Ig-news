@@ -43,3 +43,7 @@ Back-end(Servidor) retorna a lista de produtos em JSON -> Código React(bundle.j
   o cliente Fulano, na compra X.</strong>
   Básicamente essa é o conceito de web hooks
 </p>
+
+
+
+### stripe listen --forward-to localhost:3000/api/webhooks
