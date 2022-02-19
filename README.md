@@ -44,6 +44,24 @@ Back-end(Servidor) retorna a lista de produtos em JSON -> Código React(bundle.j
   Básicamente essa é o conceito de web hooks
 </p>
 
-
-
 ### stripe listen --forward-to localhost:3000/api/webhooks
+
+## Front-end JAMStack
+
+<h4>JAM => JavaScript - API - Markup</h4>
+<p>JavaScript, vai dar o funcionamento para nossa aplicação</p>
+<p>API, são as api de terceiros como o Faunadb, Stripe e o CMS</p>
+<p>Markup, seria o HTML, a estrutura da página</p>
+
+<strong>Combinando esses três nós temos a JAMStack</strong>
+
+<p>
+  Nós conseguimos criar aplicações completas sem depender diretamente
+  de ter um back-end todo configurado. É claro que isso não exclui o back-end,
+  a ideia é de ter uma aplicação que dependa menos de um back-end, sem precisar
+  criar back-end para tudo.
+</p>
+
+## Conceito de CMS
+
+<h4>Content Management System</h4>
