@@ -1,3 +1,7 @@
+/**
+ * @description Acesso ao banco de dados Faunadb
+ */
+
 import { Client } from 'faunadb';
 
 export const fauna = new Client({

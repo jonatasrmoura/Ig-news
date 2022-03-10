@@ -1,3 +1,8 @@
+/**
+ * @fileoverview SDK de Integração do Stripe com o Browser, o front-end
+ * @description @stripe/stripe-js
+ */
+
 import { loadStripe } from '@stripe/stripe-js';
 
 // Chave publica para ser acessada no meu browser

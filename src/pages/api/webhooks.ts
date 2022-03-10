@@ -17,7 +17,7 @@ async function buffer(readable: Readable) {
   return Buffer.concat(chunks);
 }
 
-// Para o Nextjs entender que isso é um stream, e não um JSON por exemplo
+// Para o Nextjs entender que isso é um stream, e não um JSON
 export const config = {
   api: {
     bodyParser: false,
@@ -25,7 +25,7 @@ export const config = {
 };
 
 //Quais eventos são relevantes(quais eu quero ouvir, e quais eventos eu quero que minha aplicação não ouça)
-// Eventos que o usuário vai fazer e que nós iremos ouvir
+// Eventos que o usuário vai fazer e que nós iremos ouvir / WEBHOOK
 const relevantEvents = new Set([
   'checkout.session.completed',
   'customer.subscription.updated',

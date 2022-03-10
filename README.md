@@ -29,9 +29,9 @@ Back-end(Servidor) retorna a lista de produtos em JSON -> Código React(bundle.j
 <h2>Autenticação com Next.js usando o Next Auth Js</h2>
 
 <h4>Métodos disponíveis dentro do Next.js para se autenticar</h4>
-<p>JWT (Storage)</p>
-<p>Next Auth (Social)</p>
-<p>Cognito, Auth0</p>
+<p>JWT (salvo no Storage)</p>
+<p>Next Auth (Social ex: google, github, linkeding, etc)</p>
+<p>Cognito(AWS), Auth0</p>
 
 <h2>Conceitos de web hooks</h2>
 <p>Quando uma aplicação de terceiro avisa a nossa aplicação que algum evento aconteceu.</p>
@@ -65,3 +65,26 @@ Back-end(Servidor) retorna a lista de produtos em JSON -> Código React(bundle.j
 ## Conceito de CMS
 
 <h4>Content Management System</h4>
+
+<span>Exemplos de CMS: </span>
+
+<p>- Wordpress</p>
+<p>x Drupal</p>
+<p>x Joomla</p>
+<p>x Magento</p>
+
+<h4>Headless CMS (Painel de administração + API HTTP, GraphQL, SDK)</h4>
+
+<span>Grátis: </span>
+<p>- Ghost (Blog)</p>
+<p>- Strapi (Qualquer tipo de serviço que eu queira armazenar)</p>
+<p>- Keystone (Qualquer tipo de aplicação, Website, ladingPage, blog)</p>
+
+<span>Pagos: </span>
+<strong>Os 3 CMS abaixo são todos muito bons!</strong>
+<p>- GraphCMS</p>
+<p>- Prismic CMS</p>
+<p>- Contentful (Enterprise)</p>
+
+<p>- Shopify (E-commerce)</p>
+<p>- Saleor (E-commerce)</p>
