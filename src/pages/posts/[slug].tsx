@@ -2,7 +2,6 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import Head from "next/head";
 import { RichText } from "prismic-dom";
-import { ReactNode } from "react";
 import { getPrismicClient } from "../../services/prismic";
 import style from './post.module.scss';
 
@@ -37,18 +36,15 @@ export default function Post({ post }: PostProps) {
 }
 
 interface IPost {
-  data: {
-    title: string;
-    content: ReactNode;
-  };
-  last_publication_date: string;
+  title: string;
+  content: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ req, params }) => {
   const session = await getSession({ req });
   const { slug } = params;
 
-  if (!session.activeSubscription) {
+  if (!session?.activeSubscription) {
     return {
       redirect: {
         destination: '/',
@@ -59,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
   const prismic = getPrismicClient(req);
 
-  const response = await prismic.getByUID('post', String(slug), {}) as IPost;
+  const response = await prismic.getByUID<IPost>('post', String(slug), {});
 
   const post = {
     slug,
